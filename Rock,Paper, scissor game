@@ -1,0 +1,69 @@
+import random
+choices = [1, 2, 3]
+print('''Rules as Follows:
+         1. Rock vs scissor: Rock wins
+         2. Scissor vs Paper: Scissor wins
+         3. Paper vs Rock: Paper wins''')
+uscore =  #userScore
+cscore = 0 #computer Score
+while True:
+    print('''choices are:
+             1. Rock
+             2. Paper
+             3. Scissor''')
+    user = int(input('Enter your choice 1- Rock, 2- Paper, 3 - Scissor'))
+    computer = random.choice(choices)
+    if user == computer:
+        print(f'Tie')
+    elif user == 1 and computer == 2:
+        print('Your choice is : Rock')
+        print('Computer is : Paper')
+        print('Rock caught in Paper')
+        print('Computer win ')
+        cscore = cscore+1
+    elif user == 2 and computer == 1:
+        print('Your choice is : Paper')
+        print('Computer is : Rock')
+        print('Rock caught in Paper')
+        print(' You win ')
+        uscore = uscore+1
+    elif user == 2 and computer == 3:
+        print('Your choice is : Paper')
+        print('Computer is : Scissor')
+        print('Scissor cuts Paper')
+        print('Computer win')
+        cscore = cscore+1
+    elif user == 3 and computer == 2:
+        print('Your choice is : Scissor')
+        print('Computer is : Paper')
+        print('Scissor cuts Paper')
+        print('You win')
+        uscore += 1
+    elif user == 1 and computer == 3:
+        print('Your choice is : Rock')
+        print('Computer is : Scissor')
+        print('Rock Smash Scissor')
+        print('You win')
+        uscore += 1
+    elif user == 3 and computer == 1:
+        print('Your choice is : Scissor')
+        print('Computer is : Rock')
+        print('Rock Smash Scissor')
+        print('Computer win')
+        cscore += 1
+    print("\n\t***ScoreBoard***")
+    print(f"\t You: {uscore} | Computer: {cscore}")
+    print("\t********")
+
+    d = input('Do you want to continue (Y/N)').upper()
+    if d == 'Y':
+        continue
+    else:
+        if uscore == cscore:
+            print(f'Your score is {uscore} and Computer score is {cscore} :Its Tie')
+        elif uscore > cscore:
+            print(f'Your score is {uscore} and Computer score is {cscore} :You Won')
+        else:
+            print(f'Your score is {uscore} and Computer score is  {cscore} :Computer won')
+
+        exit()
